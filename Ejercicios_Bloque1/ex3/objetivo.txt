@@ -1,0 +1,10 @@
+Crea un programa en el que mostris el resultat de diverses operacions mitjançant Alert, mostrant el text 
+exacte de la operació realitzada i el seu resultat.
+Ex: 
+var operacion1 = 10==10,
+alert(“La operacion 10==10 es ”+operacion1);
+Les operacions a realitzar són:
+10 == 10		- “Laura” == “laura”	- “123” == 123
+10 === 10		-  “Laura” > “laura”	- “123” === 123
+10 === 10.0		- “Laura” < “laura”	- parseInt(“123”) === 123
+Comenta el codi indicant autor i nom de l’exercici.

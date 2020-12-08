@@ -1,0 +1,2 @@
+Modifica el programa ifelse per què funcioni amb SWITCH
+Comenta el programa, autor i nom de l’exercici.

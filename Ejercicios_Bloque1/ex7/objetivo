@@ -1,0 +1,4 @@
+Crea un control parental per que no es pugui entrar a una pàgina.
+Es demanarà a l’usuari que escrigui el cognom d’algun personatge (Pregunta el que vulguis).
+Mentre l’usuari no introdueixi el valor correcte, el missatge seguirà sortint.
+Comenta el codi amb els comentaris oportuns, autor i nom de l’exercici.

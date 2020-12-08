@@ -1,0 +1,6 @@
+Crea un programa que crei 4 variables de tipus cadena amb els següents valors, “Hola”, “7”, “13” i “Adeu”.
+Mostra en un Alert una frase que contengui cometes simples.
+Mostra a un Alert que ocupi una línia de codi les variables 1 i 4 separades per un salt de línia.
+Mostra en un Alert la suma de les variables 2 i 3.
+Mostra a un Alert la suma de totes les variables.
+Comenta el codi indicant autor i nom de l’exercici.

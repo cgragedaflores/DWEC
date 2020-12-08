@@ -1,0 +1,3 @@
+Crea un programa en el que creis 5 variables numèriques (enter, decimal, científic, octal i hexadecimal)
+Mostra el seu valor en un document HTML. (Escriu en el document).
+Comenta el codi, indicant autor i nom de l’exercici.
