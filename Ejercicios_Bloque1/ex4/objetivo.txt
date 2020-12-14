@@ -1,0 +1,10 @@
+Crea un programa que demani al usuari que introdueixi 
+una edad i mostri el següent missatge en funció del número introduït.
+0-12 Nen
+13-26 Jove
+26-60 Adult
+>60 Jubilat
+Per guardar el valor del usuari podem utilitzar:
+var resposta = prompt(“Mensaje”);
+També cal comprovar que no s’introdueixin números fora de rang. Comenta el codi amb els comentaris que trobis oportuns,
+ nom i títol del exercici.

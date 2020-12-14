@@ -1,0 +1,6 @@
+Leer una cadena de extento mediante prompt y generar un array con las palabras
+que contiene, posteriormente, mostrar la siguiente informacion :
+    Numero de palabras  
+    Primera y ultima palabras
+    palabras ordenadas de la A a la Z
+    Palabras Ordenadas de la z a la A

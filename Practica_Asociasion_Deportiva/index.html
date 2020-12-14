@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/js/uikit-icons.min.js"></script>
+
+    <title>Homer's</title>
+</head>
+
+<body uk-grid class="uk-margin-remove uk-padding-remove">
+    <!-- HEADER AREA START -->
+    <header class="uk-width-1-1 uk-card uk-card-body uk-text-center  uk-padding-remove uk-height-small">
+        <!-- NAV -->
+        <div class="uk-navbar-container uk-padding-small" uk-navbar>
+            <!-- MENU ICON -->
+            <div class="uk-navbar-left uk-width-expand">
+                <a class="uk-navbar-toggle uk-margin-left" uk-navbar-toggle-icon uk-toggle href="#leftmenu"></a>
+                <span>Menu</span>
+            </div>
+            <img src="logo.png" alt="" data-width="auto" data-height="auto"
+                class="uk-position-center uk-margin-remove uk-padding-remove uk-width-expand uk-border-circle" uk-image>
+            <ul class="uk-list uk-width-auto">
+                <li id="year"></li>
+                <li id="day"></li>
+                <li id="month"></li>
+            </ul>
+        </div>
+        <!-- HIDDE MENU  -->
+        <div id="leftmenu" uk-offcanvas=" mode: reveal; overlay: true">
+            <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <a href="" class="uk-logo">Homer's Centro Deportivo</a>
+                <ul class="uk-nav uk-nav-default uk-nav-center uk-nav-primary">
+                    <li class="uk-active">
+                        <a href="">
+                            <span class="uk-icon uk-margin-small-right" uk-icon="icon: home"></span>
+                            Home</a>
+                    </li>
+                    <li class="">
+                        <a href="../index.html">Pagina Ejercicios</a>
+                            
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- ASIDE AREA START -->
+    <aside
+        class="uk-width-1-1 uk-width-1-3@m uk-height-small@s uk-card uk-card-body uk-background-muted uk-text-center uk-margin-remove"
+        uk-height-viewport="offset-bottom:20">
+        <div>
+            <ul class="uk-tab-left uk-child-width-1-1@s uk-nav-default uk-nav-parent-icon " uk-tab="connect:#content"
+                uk-nav>
+                <li class="uk-text-center"><a href="#" onclick="imc()">Calcular IMC</a></li>
+                <li class="uk-text-center"><a href="#" onclick="frecuencia()">Calcular Frecuencia Cardiaca</a></li>
+                <li class="uk-text-center"><a href="#" onclick="categoria()">Categoria</a></li>
+                <li class="uk-text-center uk-parent"><a href="#" onclick="horarioMañana()">Horario</a>
+                    <ul class="uk-nav-sub uk-tab-left" uk-tab>
+                        <li class="uk-active"><a href="#" onclick="horarioMañana()">Mañana</a></li>
+                        <li><a href="#" onclick="horarioTarde()">Tarde</a></li>
+                    </ul>
+                </li>
+                <li class="uk-text-center"><a href="">Contraseñas</a></li>
+            </ul>
+        </div>
+    </aside>
+    <!-- MAIN AREA START -->
+    <main class="uk-width-1-1 uk-width-2-3@m uk-card uk-card-body uk-background-muted uk-text-center uk-margin-remove">
+
+        <ul class="uk-switcher uk-margin-remove uk-padding-remove" id="content">
+            <li id="imc">
+                <form id="myform" class="uk-width-1-2 uk-align-center">
+                    <fieldset class="uk-fieldset">
+                        <legend class="uk-legend">Calcula tu Indice de Masa Corporal</legend>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Peso en KG" maxlength="3" id="peso"
+                                required>
+                        </div>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Altura en Cm" maxlength="3" id="altura"
+                                required>
+                        </div>
+                        <div class="uk-margin">
+                            <button class="uk-button uk-button-secondary" type="button" uk-toggle="target: #resultado"
+                                onclick="imc()">Calcular</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <div id="resultado" uk-modal class="uk-margin-remove uk-padding-remove">
+                    <div class="uk-modal-dialog uk-modal-body">
+                        <button class="uk-modal-close-default" type="button" uk-close></button>
+                        <h2 class="uk-modal-title uk-text-center">Indice Masa Corporal</h2>
+                        <h3 id="resultadoImc"></h3>
+                        <table class="uk-table uk-table-hover uk-table-divider">
+                            <tbody>
+                                <tr>
+                                    <td>Menor que 16</td>
+                                    <td>Infrapeso (delgadez severa)</td>
+                                </tr>
+                                <tr>
+                                    <td>16.0 a 16.9</td>
+                                    <td>Infrapeso (delgadez moderada)</td>
+                                </tr>
+                                <tr>
+                                    <td>17.0 a 18.49</td>
+                                    <td>Infrapeso (delgadez aceptable)</td>
+                                </tr>
+                                <tr>
+                                    <td>18.50 a 24.99</td>
+                                    <td>Peso normal</td>
+                                </tr>
+                                <tr>
+                                    <td>25.0 a 29.99</td>
+                                    <td>Sobrepeso</td>
+                                </tr>
+                                <tr>
+                                    <td>30.0 a 34.99</td>
+                                    <td>Obeso (Tipo I)</td>
+                                </tr>
+                                <tr>
+                                    <td>35.0 a 40.00</td>
+                                    <td>Obeso (Tipo II)</td>
+                                </tr>
+                                <tr>
+                                    <td>Mayour que 40.00</td>
+                                    <td>Obeso (Tipo III)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </li>
+            <li id="frecuencia">
+                <form id="myformFC" class="uk-width-1-2 uk-align-center">
+                    <fieldset class="uk-fieldset">
+                        <legend class="uk-legend">Calcula tu Frecuencia Maxima</legend>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Edad" maxlength="2" id="edad">
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-select" required>Sexo</label>
+                            <div class="uk-form-controls">
+                                <select class="uk-select" id="form-stacked-select" required>
+                                    <option value="H">Hombre</option>
+                                    <option value="M">Mujer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <button class="uk-button uk-button-secondary" type="button"
+                                uk-toggle="target: #resultadoFrecuncia" onclick="frecuencia()">Calcular</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <div id="resultadoFrecuncia" uk-modal class="uk-margin-remove uk-padding-remove">
+                    <div class="uk-modal-dialog uk-modal-body">
+                        <button class="uk-modal-close-default" type="button" uk-close></button>
+                        <h2 class="uk-modal-title uk-text-center">Frecuencia Cardiaca</h2>
+                        <h3 id="resultadoFc"></h3>
+                        <ul class="uk-list uk-list-divider">
+                            <li>Zona de recuperació (60%-70%).</li>
+                            <li>Zona aeròbica (70%-80%).</li>
+                            <li>Zona anaeròbica (80%-90%).</li>
+                            <li>Línia vermella (90%-100%).</li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li id="categoria">
+                <form id="myformFC" class="uk-width-1-2 uk-align-center">
+                    <fieldset class="uk-fieldset">
+                        <legend class="uk-legend">Categoria</legend>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="date" id="nacimiento" required>
+                        </div>
+                        <div class="uk-margin">
+                            <button class="uk-button uk-button-secondary" type="button"
+                                uk-toggle="target: #resultadoCategoria" onclick="categoria()">Calcular</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <div id="resultadoCategoria" uk-modal class="uk-margin-remove uk-padding-remove">
+                    <div class="uk-modal-dialog uk-modal-body">
+                        <button class="uk-modal-close-default" type="button" uk-close></button>
+                        <h2 class="uk-modal-title uk-text-center">Frecuencia Cardiaca</h2>
+                        <h3 id="mostrarResultado">Perteneces a la categoria : </h3>
+                        <ul class="uk-list uk-list-divider">
+                            <li>Pre Benjamin Hasta de 10 Años</li>
+                            <li>Alebin Hasta de 12 Años</li>
+                            <li>Infantil Hasta de 14 Años</li>
+                            <li>Cadete Hasta de 16 Años</li>
+                            <li>Jubenil Hasta de 19 Años</li>
+                            <li>Senior Mas de 19 Años</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li id="Horario"></li>
+            <li id="contraseñas">
+                <form id="myformPasswd" class="uk-width-1-2 uk-margin-medium uk-align-center">
+                    <fieldset class="uk-fieldset">
+                        <legend class="uk-legend">Contraseñas</legend>
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                <input class="uk-input uk-form-width-large" type="text" id="passwd" maxlength="16">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <button class="uk-button uk-button-secondary" type="button"
+                                uk-toggle="target: #resultadopasswd" onclick="comprobarConstraseña()">Enviar</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <div id="resultadopasswd" uk-modal class="uk-margin-remove uk-padding-remove">
+                    <div class="uk-modal-dialog uk-modal-body">
+                        <button class="uk-modal-close-default" type="button" uk-close></button>
+                        <h2 class="uk-modal-title uk-text-center">Comprobacion Seguridad Contraseña</h2>
+                        <h3 id="resultadoFc"></h3>
+                        <ul class="uk-list uk-width-1-1 uk-list-divider">
+                            <div class="uk-inline uk-width-1-1" id="seguridad1">
+                                <span class="uk-form-icon uk-position-right  uk-form-icon-flip " uk-icon="icon: close" style="visibility: hidden;"></span>
+                                <span class="uk-form-icon uk-position-right  uk-form-icon-flip " uk-icon="icon: check" style="visibility: hidden;"></span>
+                                <li>Contiene mas de 8 caracteres</li>
+
+                            </div>
+                            <div class="uk-inline uk-width-1-1" id="seguridad2">
+                                <span class="uk-form-icon uk-position-right  uk-form-icon-flip" uk-icon="icon: close" style="visibility: hidden;"></span>
+                                <span class="uk-form-icon uk-position-right  uk-form-icon-flip" uk-icon="icon: check" style="visibility: hidden;"></span>
+                                <li>Contiene Mayusculas</li>
+                            </div>
+                            <div class="uk-inline uk-width-1-1" id="seguridad3">
+                                <span class="uk-form-icon uk-position-right  uk-form-icon-flip" uk-icon="icon: close" style="visibility: hidden;"></span>
+                                <span class="uk-form-icon uk-position-right  uk-form-icon-flip" uk-icon="icon: check" style="visibility: hidden;"></span>
+                                <li>Contiene Minusculas</li>
+   
+                            </div>
+                            <div class="uk-inline uk-width-1-1" id="seguridad4">
+                                <span class="uk-form-icon uk-position-right  uk-form-icon-flip" uk-icon="icon: close" style="visibility: hidden;"></span>
+                                <span class="uk-form-icon uk-position-right  uk-form-icon-flip" uk-icon="icon: check" style="visibility: hidden;"></span>
+                                <li>Contiene Numeros</li>
+                            </div>
+                            <div class="uk-inline uk-width-1-1" id="seguridad5">
+                                <span class="uk-form-icon uk-position-right  uk-form-icon-flip" uk-icon="icon: close" style="visibility: hidden;"></span>
+                                <span class="uk-form-icon uk-position-right  uk-form-icon-flip" uk-icon="icon: check" style="visibility: hidden;"></span>
+                                <li>Contiene Caracteres Especiales</li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </main>
+    <!-- FOOTER AREA START -->
+    <footer class="uk-width-1-1 uk-card uk-card-body uk-background-secondary  uk-margin-remove">
+        <h1 class="uk-text-lead uk-text-success uk-text-center">Homer's Centro Deportivo</h1>
+        <h1 class="uk-text-lead uk-text-success uk-text-center">&copy;Carlos Grageda</h1>
+        <h1 class="uk-text-lead  uk-text-center"><a href="#" onclick="avisoLegal()" class="uk-text-success">Aviso
+                Legal</a></h1>
+    </footer>
+    <script src="funciones/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+Modifica l’exercici anterior de la següent manera:
+Es carrega la mateixa pregunta que abans.
+En cas que l’usuari introdueixi el nom i el cognom malament, mostrarem “ERROR, intenta un altre cop” i una altre vegada la pregunta.
+Si introdueix el nom correctament, mostrarem el missatge “Et falta el cognom” i una altre vegada la pregunta.
+Si introdueix el cognom correctament, mostrarem el missatge “Et falta el nom” i una altre vegada la pregunta.
+Comenta el codi com creguis oportú i l’autor i el nom de l’exercici.

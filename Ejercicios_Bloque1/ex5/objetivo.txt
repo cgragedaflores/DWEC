@@ -1,0 +1,7 @@
+Crea un programa que generi un llista d’hores que vagin des de les 9
+fins les 21:30 de 30 min en 30 min.
+Enlloc de emprar alert, utilitzeu la instrucció
+ document.write(“Missatge”) que mostra les dades en el HTML.
+Tindràs que emprar un for per les hores i una variable booleana que
+ anirà canviant a TRUE o FALSE si es hora en punt o i mitja.
+Comenta el codi amb els comentaris oportuns, autor i nom de l’exercici.
