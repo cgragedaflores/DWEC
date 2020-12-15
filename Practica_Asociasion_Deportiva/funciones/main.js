@@ -37,36 +37,51 @@ function comprobarConstraseña() {
         document.getElementById("seguridad1").getElementsByTagName("span")[1].style.visibility = 'visible';
     } else {
         document.getElementById("seguridad1").getElementsByTagName("span")[0].style.visibility = 'visible';
+        document.getElementById("seguridad1").getElementsByTagName("span")[1].style.visibility = 'hidden';
     }
     if (regExpUpper.test(passwd)) {
         document.getElementById("seguridad2").getElementsByTagName("span")[1].style.visibility = 'visible';
     } else {
         document.getElementById("seguridad2").getElementsByTagName("span")[0].style.visibility = 'visible';
+        document.getElementById("seguridad2").getElementsByTagName("span")[1].style.visibility = 'hidden';
     }
     if (regExpLower.test(passwd)) {
         document.getElementById("seguridad3").getElementsByTagName("span")[1].style.visibility = 'visible';
     } else {
         document.getElementById("seguridad3").getElementsByTagName("span")[0].style.visibility = 'visible';
+        document.getElementById("seguridad3").getElementsByTagName("span")[1].style.visibility = 'hidden';
     }
     if (regExpNum.test(passwd)) {
         document.getElementById("seguridad4").getElementsByTagName("span")[1].style.visibility = 'visible';
     } else {
         document.getElementById("seguridad4").getElementsByTagName("span")[0].style.visibility = 'visible';
+        document.getElementById("seguridad4").getElementsByTagName("span")[1].style.visibility = 'hidden';
     }
-    for (let index = 0; index < arraySpecialCharacter.length; index++) {
-        if(passwd.includes(arraySpecialCharacter[index])){
-            document.getElementById("seguridad5").getElementsByTagName("span")[1].style.visibility = 'visible';
-            break;
-        }else{
-            document.getElementById("seguridad5").getElementsByTagName("span")[0].style.visibility = 'visible';
-            break;
+    //Bucle que comprueba los si alguno de los caracteres especiales se encuentra en la cadena
+
+    //Por defecto la contraseña no contiene caracteres especiales
+    document.getElementById("seguridad5").getElementsByTagName("span")[0].style.visibility = 'visible';
+    document.getElementById("seguridad5").getElementsByTagName("span")[1].style.visibility = 'hidden';
+    LOOP: for (let index = 0; index < arraySpecialCharacter.length; index++) {
+        for (let j = 0; j < passwd.length; j++) {
+            //si se ha encontrado algun caracter especial muestra check
+            if (arraySpecialCharacter[index] == passwd.charAt(j)) {
+                console.log('encontrado');
+                document.getElementById("seguridad5").getElementsByTagName("span")[1].style.visibility = 'visible';
+                document.getElementById("seguridad5").getElementsByTagName("span")[0].style.visibility = 'hidden';
+                break LOOP;
+            }
         }
     }
+    //CHECK CARACTERES ESPECIALES
+
     //Limpiar forumulario
     document.getElementById("myformPasswd").reset();
     if (passwd == "") {
         document.getElementById("resultadopasswd").innerText = "Compruebe los datos";
     }
+    //Limpiar check de condicion cumplida
+
 }
 function imc() {
     //RECOGE DATOS
