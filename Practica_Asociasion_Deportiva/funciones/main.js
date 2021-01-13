@@ -35,12 +35,14 @@ function comprobarConstraseña() {
     //COMprovacion unitaria
     if (passwd.length > 8 && passwd.length < 16) {
         document.getElementById("seguridad1").getElementsByTagName("span")[1].style.visibility = 'visible';
+        document.getElementById("seguridad1").getElementsByTagName("span")[0].style.visibility = 'hidden';
     } else {
         document.getElementById("seguridad1").getElementsByTagName("span")[0].style.visibility = 'visible';
         document.getElementById("seguridad1").getElementsByTagName("span")[1].style.visibility = 'hidden';
     }
     if (regExpUpper.test(passwd)) {
         document.getElementById("seguridad2").getElementsByTagName("span")[1].style.visibility = 'visible';
+        document.getElementById("seguridad2").getElementsByTagName("span")[0].style.visibility = 'hidden';
     } else {
         document.getElementById("seguridad2").getElementsByTagName("span")[0].style.visibility = 'visible';
         document.getElementById("seguridad2").getElementsByTagName("span")[1].style.visibility = 'hidden';
