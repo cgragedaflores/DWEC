@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.15/dist/js/uikit-icons.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body uk-grid class="uk-background-secondary uk-light">
+    <form class="uk-grid-small uk-width-1-2 uk-grid-small uk-padding uk-margin-medium-left" uk-grid>
+        <legend class="uk-legend">Formulario Discos</legend>
+        <div class="uk-width-1-2@s">
+            <input class="uk-input" type="text" placeholder="Nombre del Disco" id="disc_name">
+        </div>
+        <div class="uk-width-1-2@s">
+            <input class="uk-input" type="text" placeholder="Grupo de Musica" id="group">
+        </div>
+        <div class="uk-width-1-1">
+            <input class="uk-input" type="date" placeholder="Año de Publicacion" id="date">
+        </div>
+        <div class="uk-width-1-2@s">
+            <select class="uk-select" id="genere">
+                <option value="rock">Rock</option>
+                <option value="pop">Pop</option>
+                <option value="punk">Punk</option>
+                <option value="indie">Indie</option>
+            </select>
+        </div>
+        <div class="uk-grid-small uk-child-width-auto uk-grid uk-width-1-2@s">
+            <label><input class="uk-radio" type="radio" id="r1" name="radio2" checked> Alquilado</label>
+            <label><input class="uk-radio" type="radio" id="r2" name="radio2"> No alquilado</label>
+        </div>
+        <div class="uk-container">
+            <button type="button" class="uk-button uk-button-default" id="crear"  uk-toggle="target: #modal-close-outside">Crear Disco</button>
+        </div>
+    </form>
+    <!-- This is the modal with the outside close button -->
+    <div id="modal-close-outside" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-background-secondary">
+            <button class="uk-modal-close-outside" type="button" uk-close></button>
+            <h2 class="uk-modal-title">Disco</h2>
+            <p id="texto" class="uk-text-success">.</p>
+        </div>
+    </div>
+    <script src="ex1.js"></script>
+</body>
+
+</html>
