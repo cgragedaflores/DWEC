@@ -1,61 +1,76 @@
 const form = document.getElementById('form');
-const nomUsuario = document.getElementById('nomusuari');
-const emailUsuario = document.getElementById('email');
-const passwordUsuario = document.getElementById('password');
-const password2Usuario = document.getElementById('password2');
-
-//EVENTS LISTENER
-form.addEventListener('submit', event => {
-    event.preventDefault();
-
-    if(nomUsuario.value === ''){
-        mostrarError('El nombre de usuario es obligatorio');
-    }else{
-        mostrarCorrecte();
-    }
-    if(emailUsuario.value === ''){
-        mostrarError('El email de usuario es obligatorio');
-    }else{
-        mostrarCorrecte();
-    }
-    if(passwordUsuario.value === ''){
-        mostrarError('El contraseña de usuario es obligatorio');
-    }else{
-        mostrarCorrecte();
-    }
-    if(password2Usuario.value === ''){
-        mostrarError('El contraseña de usuario es obligatorio');
-    }else{
-        mostrarCorrecte();
-    }
+const nomUsuari = document.getElementById('nomusuari');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
 
 
-    //mensajes de control
-    console.log(nomUsuario.value);
-    console.log('submit');
-});
+// Funcio mostrarError()
+// Mostra el missatge d' error en cas que no es cumpleixin
+// els requisits
+function mostrarError(nomUsuari, missatgeError) {
+    const formControl = nomUsuari.parentElement;
+    formControl.className = 'form-control error';
 
-
-
-//functions
-//mostraError : muestra el mensaje de error
-//y destaca el control afectado
-function mostrarError(input,messege){
-    const formControl = input.parentElement;
-    formControl.className  = 'form-control error';
-
-    //
     const small = formControl.querySelector('small');
-    small.innerText = messege;
+    small.innerText = missatgeError;
 }
 
-function mostrarCorrecte(input){
-    const formControl = input.parentElement;
-    formControl.className  = 'form-control correcto';
+function mostrarCorrecte(nomUsuari) {
+    const formControl = nomUsuari.parentElement;
+    formControl.className = 'form-control correcto';
 }
 
-
-function validateEmail(email) {
+function comprovaEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
+
+function esObligatori(input) {
+    if (input.value === '') {
+        mostrarError(input, 'Es obligatori');
+    } else {
+        mostrarCorrecte(input);
+    }
+}
+
+// Event listener
+form.addEventListener('submit', function(e) {
+    e.preventDefault(console.log('submit'));
+
+    // console.log(nomUsuari.value);
+    
+    /*if (nomUsuari.value === '') {
+        mostrarError(nomUsuari,'El nom d usuari es obligatori');
+    } else {
+        mostrarCorrecte(nomUsuari);
+    }
+
+    if (email.value === '') {
+        mostrarError(email,'El email es obligatori');
+    } else if (!comprovaEmail(email.value)) {
+        mostrarError(email, 'El email no es valido');
+    } else {
+        mostrarCorrecte(email);
+    }
+
+    if (password.value === '') {
+        mostrarError(password,'La password es obligatoria');
+    } else {
+        mostrarCorrecte(password);
+    }
+
+    if (password2.value === '') {
+        mostrarError(password2,'La confirmacio es obligatoria');
+    } else {
+        mostrarCorrecte(password2);
+    }*/
+
+    esObligatori(nomUsuari);
+    
+    esObligatori(email);
+    
+    esObligatori(password);
+    
+    esObligatori(password2);
+});
