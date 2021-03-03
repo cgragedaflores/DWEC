@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js"></script>
+    <title>DOM</title>
+</head>
+
+<body uk-grid>
+    <main class="uk-width-1-1@s uk-flex-center uk-flex-middle uk-padding uk-margin-medium-left">
+        <ul uk-accordion="collapsible: true" class="uk-flex-center">
+            <li>
+                <a class="uk-accordion-title" href="#">Ejercicio 1</a>
+                <div class="uk-accordion-content">
+                    <ul id="padre">
+                        <li id="muestra">Muestra</li>
+                    </ul>
+                    <div class="uk-button-group">
+                        <button class="uk-button uk-button-default" id="insert">Introducir texto</button>
+                        <button class="uk-button uk-button-default" id="deleteFirst">Borrar Primer li</button>
+                        <button class="uk-button uk-button-default" id="deleteLast">Borrar Ultimo li</button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a class="uk-accordion-title" href="#">Ejercicio 2</a>
+                <div class="uk-accordion-content" id = "container">
+                    <table class="uk-table uk-table-divider">
+                        <tbody>
+                            <tr>
+                                <th><button class="uk-button uk-button-default" id="crearTexto">Crear Input Texto</button></th>
+                                <th><button class="uk-button uk-button-default" id="crearPassword">Crear Input Password</button></th>
+                                <th><button class="uk-button uk-button-default" id="crearArea">Crear TextArea</button></th>
+                                <th><button class="uk-button uk-button-default" id="crearLabel">Crear Label</button></th>
+                                <th><button class="uk-button uk-button-default" id="crearImg">Crear Imagen</button></th>
+                                <th><button class="uk-button uk-button-default" id="crearCheck">Crear Checkbox</button</th>
+                                <th><button class="uk-button uk-button-default" id="crearSubmit">Crear Boton</button></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <form class="uk-padding uk-width-1-2@s uk-align-center"  id="padreFormulario" uk-grid>
+                        <fieldset class="uk-fieldset">
+                            <legend class="uk-legend">Formulario AutoGenerado</legend>
+                        </fieldset>
+                    </form>
+                </div>
+            </li>
+            <li>
+                <a class="uk-accordion-title" href="#">Ejercicio 3</a>
+                <div class="uk-accordion-content uk-padding uk-margin" >
+                    <form action="" id = "container-ex3"></form>
+                </div>
+            </li>
+            <li>
+                <a class="uk-accordion-title" href="#">Ejercicio 4</a>
+                <div class="uk-accordion-content uk-padding uk-margin" id='floristeria'>
+                    <div class="uk-margin-small">
+                        <div class="uk-button-group" id='botones'>
+                        </div>
+                    </div>
+                    <div class="uk-margin-small" id='contar'>
+                        
+                    </div>
+                    <div class="uk-margin-small" id='contar'>
+                        <span class="uk-text-background" id='contador'>Aqui se muestran el total de elementos</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>
